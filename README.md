@@ -1,22 +1,9 @@
-# Python on Replit
+Lost Ark Info Bot - Made by `Afo#6993`
+-
+### Function which bot is covering atm:
+1. Checking status of `EU Procyon server` by simply typing `!procyon` in discord chat.
 
-This is a template to get you started with Python on Replit. It's ready to go so you can just hit run and start coding!
+Other function's comming soon...
 
-## Running the repl
 
-Simply hit run! You can edit the run command from the `.replit` file.
-
-## Installing packages
-
-To add packages to your repl, you can just import directly in the file you want to use the package in, and it will automatically be installed when you press the run button. Like below:
-```python
-import math
-import pandas as pd
-from flask import Flask
-```
-
-You could also install packages by using the Replit packager interface in the left sidebar.
-
-## Help
-
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+Bot 24/7h running is supported by `https://uptimerobot.com/`
