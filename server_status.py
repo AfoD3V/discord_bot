@@ -10,23 +10,25 @@ def status_check():
 
     status = {}
 
-    for server in bs.find_all(
-            'div',
-            class_='ags-ServerStatus-content-responses-response-server'):
-        good = server.find(
-            'div',
-            class_=
-            'ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--good'
-        )
-        busy = server.find(
-            'div',
-            class_=
-            'ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--busy'
-        )
+    for server in bs.find_all('div', class_='ags-ServerStatus-content-responses-response-server'):
+
+        good = server.find('div',
+                           class_='ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--good')
+        busy = server.find('div',
+                           class_='ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--busy')
+        full = server.find('div',
+                           class_='ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--full')
+        maintenance = server.find('div',
+                                  class_='ags-ServerStatus-content-responses-response-server-status ags-ServerStatus-content-responses-response-server-status--maintenance')
+
         if good:
             status.update({f'{server.get_text().strip()}': 'Good'})
         elif busy:
             status.update({f'{server.get_text().strip()}': 'Busy'})
+        elif full:
+            status.update({f'{server.get_text().strip()}': 'Full'})
+        elif maintenance:
+            status.update({f'{server.get_text().strip()}': 'Maintenance'})
 
     return status
 
